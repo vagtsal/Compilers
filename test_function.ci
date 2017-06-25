@@ -1,0 +1,40 @@
+\* Tsalesis Evangelos *\
+\* AM : 1779 *\
+
+\* must print: "123421567891020" *\
+
+program   test {
+	declare
+		x,y,z
+	enddeclare
+	
+	procedure proc1 (inout x1){
+		procedure proc2 (inout y1){
+			function func1 (in y1){
+				return (y1+1);
+			}
+			y1 := func1(in y1);
+		}
+		call proc2 (inout x1);
+	}
+	
+	procedure proc4 (in z1){
+		z1 := z1 + 1;
+		print (z1);
+	}
+	
+	y := 10;
+	x := 0;
+	z :=20;
+	
+	while (x<y){
+		call proc1(inout x);
+		if (x = 5){
+			call proc4(in z);
+		};
+		print (x);
+	};	
+	
+	print (z);
+	
+}

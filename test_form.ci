@@ -1,0 +1,92 @@
+\* Tsalesis Evangelos *\
+\* AM : 1779 *\
+
+program   test {
+	declare
+		x,y,z
+	enddeclare
+
+	function func1 (in xx, inout yy){
+		declare
+			x1,y1,z1
+		enddeclare
+		
+		function func2 (in xx2, inout yy2){		\* in line comments *\
+			if (x>=y or z<>5){
+				x:=5
+			}
+			else {
+				select (xx2)
+				1: {y := x/((5/2)/2)}
+				2: {x := func1(in x, inout yy2)}
+				default: {}
+			}
+			;
+		
+			return ((4+2)/xx2)
+		}
+		
+		if (x1>xx or z1<>5){
+			x1:=5
+		}
+		else {}
+		;
+		return (z1);
+	}
+
+\* multi
+	line
+	comments
+*\
+	
+	function func3 (in Xx3, inout Yy3){		\* in line comments *\
+		if (x>y or z<>5){
+			x:=5 ;
+		}
+		else {
+			select (Xx3)
+			1: {y := x/((5/2)/2)}
+			2: {x:= func3(in x, inout Yy3)}
+			default: {x:=5}
+		}
+		;
+	
+		return ((4+2)/Xx3)
+	}
+	
+	procedure pro1 (in x2x){
+		while (not[not[x = 4354 or y<3] and [y<=1 or z >= y]]){
+			x := (x+6)*7;
+			y:=6
+		}
+		;
+	}
+
+	
+	
+	
+	do {
+		y:=y+5
+		;
+		do {
+			y:=y+5
+			;
+			exit
+		} while (y>4)
+		;
+		exit
+	} while (y>4)
+	;
+
+	call pro1 (in x)
+	;
+	
+	if (y=-4353) x:= func1(in (3+32)/2, inout x);
+	;
+	
+	y := func1(in z, inout y)
+	;
+	print(545/x*2)
+}
+
+\* comments after program block*\
